@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="Schrödinger's Navigator: Imagining an Ensemble of Futures for Zero-Shot Object Navigation">
+  <meta name="keywords" content="Schrödinger's Navigator, World Model, Object Navigation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>Schrödinger's Navigator: Imagining an Ensemble of Futures for Zero-Shot Object Navigation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/logo.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -42,85 +42,47 @@
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
 
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">Schrödinger's Navigator: Imagining an Ensemble of Futures for Zero-Shot Object Navigation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <a href="">Yu He</a><sup>1,4</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+              <a href="">Da Huang</a><sup>2,4</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              <a href="">Zhenyang Liu</a><sup>1,4</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+              <a href="">Zixiao Gu</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+              <a href="">Qiang Sun</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+              <a href="">Guangnan Ye</a><sup>1,4</sup>,
             </span>
             <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+              <a href="">Yanwei Fu</a><sup>1,4</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>1</sup>Fudan University,</span>
+            <span class="author-block"><sup>2</sup>Shanghai Jiao Tong University,</span>
+            <span class="author-block"><sup>3</sup>Shanghai University of International Business and Economics,</span>
+            <span class="author-block"><sup>4</sup>Shanghai Innovation Institute</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -128,28 +90,9 @@
                   <span>Paper</span>
                 </a>
               </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -157,15 +100,6 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
             </div>
 
           </div>
@@ -175,75 +109,113 @@
   </div>
 </section>
 
-<section class="hero teaser">
+
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
+    <!-- 视频部分 -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Schrödinger's Navigator: Imagining an Ensemble of Futures for Zero-Shot Object Navigation</h2>
+        <div class="content has-text-justified">
+          <div class="has-text-centered" style="position: relative;">
+            <video id="dp4-video" autoplay muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./static/videos/supp.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <!-- 静音开关按钮 -->
+            <button id="unmute-btn" 
+                    style="
+                      position: absolute;
+                      bottom: 10px;
+                      right: 10px;
+                      padding: 0.5rem 1rem;
+                      font-size: 0.9rem;
+                      cursor: pointer;
+                      background-color: rgba(0,0,0,0.5);
+                      color: white;
+                      border: none;
+                      border-radius: 4px;
+                    ">
+              Unmute
+            </button>
+          </div>
+          <!-- 视频下方的说明文字 -->
+          <div style="text-align: left; max-width: 800px; margin: 1rem auto;">
+            <p>
+              We present qualitative examples in both <strong>simulated</strong> and <strong>real-world</strong>
+              environments in the attached video.
+            </p>
+          
+            <p>
+              <strong>Simulation.</strong>
+              We select several challenging cases characterized by severe visual occlusions.
+            </p>
+          
+            <p>
+              <strong>Real world.</strong>
+              We show three indoor scenes: <em>office</em>, <em>classroom</em>, and <em>common room</em>.
+              In the classroom, we further demonstrate robustness under two types of
+              <strong><em>dynamic conditions</em></strong>:
+            </p>
+          
+            <div class="box" style="margin-top: 0.75rem; margin-bottom: 0.75rem;">
+              <ul class="has-text-left" style="margin-top: 0.25rem;">
+                <li><strong><em>Moving objects</em></strong>, such as a chair in motion.</li>
+                <li><strong><em>Sudden occlusion</em></strong>, caused by a chair abruptly entering the view.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <script>
+    // 控制视频声音按钮
+    const video = document.getElementById('dp4-video');
+    const btn = document.getElementById('unmute-btn');
+
+    btn.addEventListener('click', () => {
+      if (video.muted) {
+        video.muted = false;
+        btn.textContent = 'Mute';
+      } else {
+        video.muted = true;
+        btn.textContent = 'Unmute';
+      }
+      video.play();
+    });
+  </script>
 </section>
 
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="has-text-centered">
+        <img src="./static/images/teaser.png" alt="Teaser Image" style="width: 70%; height: auto;">
+      </div>
+
+      <!-- 一句短总结：更像 subtitle -->
+      <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+        Trajectory-conditioned 3D imagination helps robots see beyond occlusions.
+      </h2>
+
+      <!-- 正文：更易读、更像 paper -->
+      <div class="content is-size-6 has-text-justified" style="max-width: 900px; margin: 0.75rem auto 0;">
+        <p>
+          Real-world zero-shot object navigation often fails when the target object (e.g., a cat) is
+          hidden behind occlusions and surrounded by unknown or potentially hazardous space.
+          Conventional navigation systems typically perceive only the immediate occluder and cannot
+          infer what exists beyond it.
+        </p>
+        <p>
+          <strong>Schrödinger’s Navigator</strong> addresses this challenge by modeling unobserved
+          regions as multiple plausible futures. It samples several trajectories around the occluding
+          structure and uses a <strong>trajectory-conditioned 3DGS imagination model</strong> to predict
+          expected observations along each path. This enables the robot to anticipate the post-occlusion
+          scene and select safer, less-occluded routes that increase the likelihood of locating the target.
+        </p>
       </div>
     </div>
   </div>
@@ -258,190 +230,232 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
+            Zero-shot object navigation (ZSON) requires a robot to locate a target object in a previously unseen environment without relying on pre-built maps or task-specific training.
+            However, existing ZSON methods often struggle in realistic and cluttered environments, particularly when the scene contains heavy occlusions, unknown risks, or dynamically moving target objects.
+            To address these challenges, we propose <strong>Schrödinger’s Navigator</strong>, a navigation framework inspired by Schrödinger’s thought experiment on uncertainty. The framework treats unobserved space as a set of plausible future worlds and reasons over them before acting.
+            Conditioned on egocentric visual inputs and three candidate trajectories, a trajectory-conditioned 3D world model imagines future observations along each path. This enables the agent to see beyond occlusions and anticipate risks in unseen regions without requiring extra detours or dense global mapping.
+            The imagined 3D observations are fused into the navigation map and used to update a value map. These updates guide the policy toward trajectories that avoid occlusions, reduce exposure to uncertain space, and better track moving targets.
+            Experiments on a Go2 quadruped robot across three challenging scenarios, including severe static occlusions, unknown risks, and dynamically moving targets, show that Schrödinger’s Navigator consistently outperforms strong ZSON baselines in self-localization, object localization, and overall Success Rate in occlusion-heavy environments.
+            These results demonstrate the effectiveness of trajectory-conditioned 3D imagination in enabling robust zero-shot object navigation.
             We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
-  </div>
 </section>
 
 
 <section class="section">
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+    <!-- Introduction. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">The framework of our Schrödinger's Navigator</h2>
         <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
+        </p>
+          <!-- 图片居中 -->
+          <div class="has-text-centered">
+            <img src="./static/images/pipeline.png" alt="Introduction Image" style="width: 100%; height: auto;">
           </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
           <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
+            Overview of our Navigator pipeline. Left: The system receives a goal instruction, RGB-D observations, and the robot pose as input. Bottom center: A trajectory sampler deterministically selects three candidate trajectories and conditions a 3D world model. The model predicts future 3DGS observations along these trajectories—left bypass, right bypass, and over-the-top—to infer occluded and unobserved regions. Top right: The predicted cues are fused with current observations to construct and update multi-sourced value maps and enable future-aware reasoning. This process produces a final affordance map used for intermediate waypoint selection. Bottom right: The execution unit follows the selected waypoint and generates control commands to navigate the robot continuously toward the goal.
           </p>
           <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
-
+    <!--/ Introduction. -->
   </div>
 </section>
 
 
-<section class="section" id="BibTeX">
+<section class="section" id="results">
+  <div class="container is-max-desktop">
+
+    <!-- Title + intro -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified is-size-6" style="max-width: 900px; margin: 0 auto;">
+          <p>
+            We report results in both <strong>real-world</strong> and <strong>simulation</strong> settings.
+            The real-robot experiments validate robustness under occlusions, unknown risks, and moving targets,
+            while the simulator experiments provide controlled comparisons across diverse environments.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- Real-world Figure (keep) -->
+    <!-- ===================== -->
+    <div style="max-width: 900px; margin: 1.25rem auto 0;">
+      <h3 class="title is-5 has-text-centered" style="margin-bottom: 0.75rem;">Real-world (Go2)</h3>
+
+      <figure class="image">
+        <img src="./static/images/results_real.png" alt="Real-world experiment results"
+             style="border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.10);">
+      </figure>
+      <p class="has-text-centered is-size-7" style="margin-top: 0.6rem; color: #555;">
+        Performance under three indoor scenes: office, classroom, and common room.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <!-- Real-world Table -->
+    <!-- ===================== -->
+    <div style="max-width: 720px; margin: 1rem auto 0;">
+      <div class="table-container">
+        <table class="table is-striped is-hoverable is-fullwidth">
+          <caption class="has-text-centered is-size-7"
+                   style="caption-side: bottom; padding-top: 0.6rem; color: #555;">
+            <strong>Table:</strong> Comparison with baseline method in real-world environments. Results show success counts over ten trials per environment. The last column summarizes performance across all trials.
+          </caption>
+
+          <thead>
+            <tr>
+              <th>Scene</th>
+              <th class="has-text-centered">Office</th>
+              <th class="has-text-centered">Classroom</th>
+              <th class="has-text-centered">Common Room</th>
+              <th class="has-text-centered">All</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td colspan="5" class="has-text-centered"
+                  style="font-weight: 600; background: rgba(0,0,0,0.03);">
+                Search for static objects
+              </td>
+            </tr>
+            <tr>
+              <td>InstructNav</td>
+              <td class="has-text-centered">7/10</td>
+              <td class="has-text-centered">7/10</td>
+              <td class="has-text-centered"><strong>8/10</strong></td>
+              <td class="has-text-centered">22/30</td>
+            </tr>
+            <tr style="background: rgba(72, 199, 142, 0.08);">
+              <td>Ours</td>
+              <td class="has-text-centered"><strong>8/10</strong></td>
+              <td class="has-text-centered"><strong>8/10</strong></td>
+              <td class="has-text-centered">7/10</td>
+              <td class="has-text-centered"><strong>23/30</strong></td>
+            </tr>
+
+            <tr>
+              <td colspan="5" class="has-text-centered"
+                  style="font-weight: 600; background: rgba(0,0,0,0.03);">
+                Search for dynamic objects
+              </td>
+            </tr>
+            <tr>
+              <td>InstructNav</td>
+              <td class="has-text-centered">3/10</td>
+              <td class="has-text-centered">4/10</td>
+              <td class="has-text-centered">3/10</td>
+              <td class="has-text-centered">10/30</td>
+            </tr>
+            <tr style="background: rgba(72, 199, 142, 0.08);">
+              <td>Ours</td>
+              <td class="has-text-centered"><strong>5/10</strong></td>
+              <td class="has-text-centered"><strong>5/10</strong></td>
+              <td class="has-text-centered"><strong>6/10</strong></td>
+              <td class="has-text-centered"><strong>16/30</strong></td>
+            </tr>
+
+            <tr>
+              <td colspan="5" class="has-text-centered"
+                  style="font-weight: 600; background: rgba(0,0,0,0.03);">
+                Sudden Obstacles
+              </td>
+            </tr>
+            <tr>
+              <td>InstructNav</td>
+              <td class="has-text-centered">4/10</td>
+              <td class="has-text-centered">3/10</td>
+              <td class="has-text-centered">5/10</td>
+              <td class="has-text-centered">12/30</td>
+            </tr>
+            <tr style="background: rgba(72, 199, 142, 0.08);">
+              <td>Ours</td>
+              <td class="has-text-centered"><strong>6/10</strong></td>
+              <td class="has-text-centered"><strong>7/10</strong></td>
+              <td class="has-text-centered"><strong>6/10</strong></td>
+              <td class="has-text-centered"><strong>19/30</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- Simulation Table (HM3D) -->
+    <!-- ===================== -->
+    <div style="max-width: 720px; margin: 2rem auto 0;">
+      <h3 class="title is-5 has-text-centered" style="margin-bottom: 0.75rem;">Simulation (HM3D)</h3>
+
+      <div class="table-container">
+        <table class="table is-striped is-hoverable is-fullwidth">
+          <caption class="has-text-centered is-size-7"
+                   style="caption-side: bottom; padding-top: 0.6rem; color: #555;">
+            <strong>Table:</strong> <strong>Quantitative Comparison on Simulation Results.</strong>
+            Cell background colors indicate the
+            <span style="background:#fca5a5; padding:0 6px; border-radius:6px;">best</span>,
+            <span style="background:#fdba74; padding:0 6px; border-radius:6px;">second best</span>, or
+            <span style="background:#fde68a; padding:0 6px; border-radius:6px;">third best</span>.
+          </caption>
+
+          <thead>
+            <tr>
+              <th rowspan="2">Method</th>
+              <th rowspan="2" class="has-text-centered" style="white-space: nowrap;">Training Free</th>
+              <th colspan="3" class="has-text-centered">HM3D</th>
+            </tr>
+            <tr>
+              <th class="has-text-centered">SR↑</th>
+              <th class="has-text-centered">SPL↑</th>
+              <th class="has-text-centered">DTG↓</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr><td>ZSON</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.255</td><td class="has-text-centered">0.126</td><td class="has-text-centered">--</td></tr>
+            <tr><td>PixNav</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.379</td><td class="has-text-centered">0.205</td><td class="has-text-centered">--</td></tr>
+            <tr><td>SPNet</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.312</td><td class="has-text-centered">0.101</td><td class="has-text-centered">--</td></tr>
+            <tr><td>SGM</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.602</td><td class="has-text-centered" style="background:#fdba74;"><strong>0.308</strong></td><td class="has-text-centered">--</td></tr>
+
+            <tr><td>ESC</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.392</td><td class="has-text-centered">0.223</td><td class="has-text-centered">--</td></tr>
+            <tr><td>VLFM</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.525</td><td class="has-text-centered" style="background:#fde68a;"><strong>0.304</strong></td><td class="has-text-centered">--</td></tr>
+            <tr><td>VoroNav</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.420</td><td class="has-text-centered">0.260</td><td class="has-text-centered">--</td></tr>
+            <tr><td>L3MVN</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.504</td><td class="has-text-centered">0.231</td><td class="has-text-centered">4.43</td></tr>
+            <tr><td>TriHelper</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.565</td><td class="has-text-centered">0.253</td><td class="has-text-centered">3.87</td></tr>
+            <tr><td>GAMap</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.531</td><td class="has-text-centered">0.260</td><td class="has-text-centered">--</td></tr>
+            <tr><td>InstructNav</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.510</td><td class="has-text-centered">0.187</td><td class="has-text-centered" style="background:#fdba74;"><strong>2.89</strong></td></tr>
+            <tr><td>InstructNav*</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.453</td><td class="has-text-centered">0.186</td><td class="has-text-centered" style="background:#fde68a;"><strong>3.38</strong></td></tr>
+            <tr><td>CogNav</td><td class="has-text-centered">✓</td><td class="has-text-centered" style="background:#fdba74;"><strong>0.725</strong></td><td class="has-text-centered">0.262</td><td class="has-text-centered">--</td></tr>
+            <tr><td>ApexNav</td><td class="has-text-centered">✓</td><td class="has-text-centered" style="background:#fca5a5;"><strong>0.762</strong></td><td class="has-text-centered" style="background:#fca5a5;"><strong>0.380</strong></td><td class="has-text-centered">--</td></tr>
+
+            <tr style="background: rgba(72, 199, 142, 0.08);">
+              <td><strong>Ours</strong></td>
+              <td class="has-text-centered">✓</td>
+              <td class="has-text-centered" style="background:#fde68a;"><strong>0.609</strong></td>
+              <td class="has-text-centered">0.237</td>
+              <td class="has-text-centered" style="background:#fca5a5;"><strong>2.23</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{park2021nerfies,
@@ -451,7 +465,7 @@
   year      = {2021},
 }</code></pre>
   </div>
-</section>
+</section> -->
 
 
 <footer class="footer">
