@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Schrödinger's Navigator: Imagining an Ensemble of Futures for Zero-Shot Object Navigation">
-  <meta name="keywords" content="Schrödinger's Navigator, World Model, Object Navigation">
+        content="Project page for Schrödinger's Navigator: Imagining an Ensemble of Futures for Zero-Shot Object Navigation.">
+  <meta name="keywords"
+        content="Schrödinger's Navigator, Zero-Shot Object Navigation, Embodied AI, World Model, 3D Gaussian Splatting">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Schrödinger's Navigator: Imagining an Ensemble of Futures for Zero-Shot Object Navigation</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,7 +18,6 @@
     }
 
     gtag('js', new Date());
-
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
@@ -39,38 +38,191 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <style>
+    body {
+      background: #fffdf8;
+      color: #1f2933;
+    }
+
+    .hero.is-paper {
+      background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+    }
+
+    .paper-badge {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid #d9e4ef;
+      background: rgba(255, 255, 255, 0.95);
+      color: #486074;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-summary {
+      max-width: 900px;
+      margin: 1.25rem auto 0;
+      color: #4e5a67;
+      line-height: 1.75;
+    }
+
+    .teaser-frame,
+    .figure-frame,
+    .video-frame,
+    .metric-card,
+    .highlight-card,
+    .bibtex-frame {
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
+    }
+
+    .teaser-frame,
+    .figure-frame,
+    .video-frame,
+    .bibtex-frame {
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .section-soft {
+      background: linear-gradient(180deg, rgba(248, 250, 252, 0.85) 0%, rgba(255, 255, 255, 0.95) 100%);
+    }
+
+    .section-copy {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      margin-bottom: 0.6rem;
+      color: #5f6c79;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .teaser-frame {
+      padding: 1.25rem;
+    }
+
+    .teaser-image {
+      display: block;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      border-radius: 14px;
+    }
+
+    .highlight-card {
+      height: 100%;
+      padding: 1.5rem;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .highlight-card h3 {
+      margin-bottom: 0.75rem;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.05rem;
+      color: #1f2933;
+    }
+
+    .metric-card {
+      height: 100%;
+      padding: 1.25rem;
+      border: 1px solid rgba(72, 199, 142, 0.18);
+      background: linear-gradient(180deg, #f7fbf8 0%, #eef8f1 100%);
+      text-align: center;
+    }
+
+    .metric-number {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #14532d;
+    }
+
+    .video-frame {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-toggle {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      padding: 0.5rem 0.95rem;
+      border: none;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.75);
+      color: #ffffff;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .figure-frame {
+      padding: 1rem;
+    }
+
+    .result-note {
+      margin-top: 0.7rem;
+      color: #5a6571;
+      font-size: 0.92rem;
+    }
+
+    .bibtex-frame {
+      padding: 1.25rem;
+      background: #111827;
+      color: #f9fafb;
+    }
+
+    .bibtex-frame pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 0.94rem;
+      line-height: 1.75;
+    }
+
+    .footer-links .icon-link {
+      margin: 0 0.35rem;
+    }
+
+    .coming-soon-button {
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .link-block .button {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  </style>
 </head>
 <body>
 
-
-<section class="hero">
+<section class="hero is-paper">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
+          <div class="paper-badge">arXiv 2026 · cs.RO / cs.AI / cs.CV</div>
           <h1 class="title is-1 publication-title">Schrödinger's Navigator: Imagining an Ensemble of Futures for Zero-Shot Object Navigation</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="">Yu He</a><sup>1,4</sup>,</span>
-            <span class="author-block">
-              <a href="">Da Huang</a><sup>2,4</sup>,</span>
-            <span class="author-block">
-              <a href="">Zhenyang Liu</a><sup>1,4</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://github.com/night-killer">Zixiao Gu</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="">Qiang Sun</a><sup>3</sup>,
-            </span>
-            <span class="author-block">
-              <a href="">Guangnan Ye</a><sup>1,4</sup>,
-            </span>
-            <span class="author-block">
-              <a href="">Yanwei Fu</a><sup>1,4</sup>
-            </span>
+            <span class="author-block">Yu He<sup>1,4</sup>,</span>
+            <span class="author-block">Da Huang<sup>2,4</sup>,</span>
+            <span class="author-block">Zhenyang Liu<sup>1,4</sup>,</span>
+            <span class="author-block">Zixiao Gu<sup>1</sup>,</span>
+            <span class="author-block">Qiang Sun<sup>3</sup>,</span>
+            <span class="author-block">Guangnan Ye<sup>1,4</sup>,</span>
+            <span class="author-block">Yanwei Fu<sup>1,4</sup>,</span>
+            <span class="author-block">Yu-Gang Jiang<sup>1</sup></span>
           </div>
-
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Fudan University,</span>
             <span class="author-block"><sup>2</sup>Shanghai Jiao Tong University,</span>
@@ -80,239 +232,256 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2512.21201"
+                   target="_blank" rel="noopener"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
+                    <i class="ai ai-arxiv"></i>
                   </span>
                   <span>Paper</span>
                 </a>
               </span>
-              <!-- Code Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="https://arxiv.org/pdf/2512.21201.pdf"
+                   target="_blank" rel="noopener"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fab fa-github"></i>
+                    <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Code (Coming Soon)</span>
-                  </a>
+                  <span>PDF</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <span class="button is-normal is-rounded is-dark coming-soon-button" aria-disabled="true">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code Coming Soon</span>
+                </span>
               </span>
             </div>
+          </div>
 
+          <div class="hero-summary content is-size-5">
+            <p>
+              Schrödinger's Navigator equips a zero-shot object navigation agent with an <strong>ensemble of imagined futures</strong>.
+              Instead of reacting only to the visible occluder, the robot samples several bypass trajectories, predicts what it
+              is likely to observe along each route, and then selects waypoints using future-aware value maps that balance
+              target likelihood, traversability, and uncertainty in hidden space.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- 视频部分 -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Schrödinger's Navigator: Imagining an Ensemble of Futures for Zero-Shot Object Navigation</h2>
-        <div class="content has-text-justified">
-          <div class="has-text-centered" style="position: relative;">
-            <video id="dp4-video" autoplay muted loop playsinline style="width: 100%; height: auto;">
-              <source src="./static/videos/supp.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <!-- 静音开关按钮 -->
-            <button id="unmute-btn" 
-                    style="
-                      position: absolute;
-                      bottom: 10px;
-                      right: 10px;
-                      padding: 0.5rem 1rem;
-                      font-size: 0.9rem;
-                      cursor: pointer;
-                      background-color: rgba(0,0,0,0.5);
-                      color: white;
-                      border: none;
-                      border-radius: 4px;
-                    ">
-              Unmute
-            </button>
-          </div>
-          <!-- 视频下方的说明文字 -->
-          <div style="text-align: left; max-width: 800px; margin: 1rem auto;">
-            <p>
-              We present qualitative examples in both <strong>simulated</strong> and <strong>real-world</strong>
-              environments in the attached video.
-            </p>
-          
-            <p>
-              <strong>Simulation.</strong>
-              We select several challenging cases characterized by severe visual occlusions.
-            </p>
-          
-            <p>
-              <strong>Real world.</strong>
-              We show three indoor scenes: <em>office</em>, <em>classroom</em>, and <em>common room</em>.
-              In the classroom, we further demonstrate robustness under two types of
-              <strong><em>dynamic conditions</em></strong>:
-            </p>
-          
-            <div class="box" style="margin-top: 0.75rem; margin-bottom: 0.75rem;">
-              <ul class="has-text-left" style="margin-top: 0.25rem;">
-                <li><strong><em>Moving objects</em></strong>, such as a chair in motion.</li>
-                <li><strong><em>Sudden occlusion</em></strong>, caused by a chair abruptly entering the view.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // 控制视频声音按钮
-    const video = document.getElementById('dp4-video');
-    const btn = document.getElementById('unmute-btn');
-
-    btn.addEventListener('click', () => {
-      if (video.muted) {
-        video.muted = false;
-        btn.textContent = 'Mute';
-      } else {
-        video.muted = true;
-        btn.textContent = 'Unmute';
-      }
-      video.play();
-    });
-  </script>
-</section>
-
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <div class="has-text-centered">
-        <img src="./static/images/teaser.png" alt="Teaser Image" style="width: 70%; height: auto;">
+      <div class="section-kicker has-text-centered">Teaser</div>
+      <div class="teaser-frame">
+        <img src="./static/images/teaser.png" alt="Teaser image" class="teaser-image">
       </div>
-
-      <!-- 一句短总结：更像 subtitle -->
-      <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-        Trajectory-conditioned 3D imagination helps robots see beyond occlusions.
+      <h2 class="subtitle has-text-centered" style="margin-top: 1.2rem;">
+        Trajectory-conditioned 3D imagination lets the robot reason about what may exist behind an occluder before it commits to a route.
       </h2>
-
-      <!-- 正文：更易读、更像 paper -->
-      <div class="content is-size-6 has-text-justified" style="max-width: 900px; margin: 0.75rem auto 0;">
+      <div class="content has-text-justified section-copy" style="margin-top: 1rem;">
         <p>
-          Real-world zero-shot object navigation often fails when the target object (e.g., a cat) is
-          hidden behind occlusions and surrounded by unknown or potentially hazardous space.
-          Conventional navigation systems typically perceive only the immediate occluder and cannot
-          infer what exists beyond it.
-        </p>
-        <p>
-          <strong>Schrödinger’s Navigator</strong> addresses this challenge by modeling unobserved
-          regions as multiple plausible futures. It samples several trajectories around the occluding
-          structure and uses a <strong>trajectory-conditioned 3DGS imagination model</strong> to predict
-          expected observations along each path. This enables the robot to anticipate the post-occlusion
-          scene and select safer, less-occluded routes that increase the likelihood of locating the target.
+          The key failure mode in real-world zero-shot object navigation is not only that the target may be hidden,
+          but also that the hidden area may contain free space, clutter, or risk that the robot cannot infer from a single RGB-D snapshot.
+          Schrödinger's Navigator models these unseen regions as multiple plausible futures and explicitly reasons over them.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-
-<section class="section">
+<section class="section section-soft">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <div class="section-kicker">Abstract</div>
+        <h2 class="title is-3">Paper Overview</h2>
+        <div class="content has-text-justified section-copy">
           <p>
-            Zero-shot object navigation (ZSON) requires a robot to locate a target object in a previously unseen environment without relying on pre-built maps or task-specific training.
-            However, existing ZSON methods often struggle in realistic and cluttered environments, particularly when the scene contains heavy occlusions, unknown risks, or dynamically moving target objects.
-            To address these challenges, we propose <strong>Schrödinger’s Navigator</strong>, a navigation framework inspired by Schrödinger’s thought experiment on uncertainty. The framework treats unobserved space as a set of plausible future worlds and reasons over them before acting.
-            Conditioned on egocentric visual inputs and three candidate trajectories, a trajectory-conditioned 3D world model imagines future observations along each path. This enables the agent to see beyond occlusions and anticipate risks in unseen regions without requiring extra detours or dense global mapping.
-            The imagined 3D observations are fused into the navigation map and used to update a value map. These updates guide the policy toward trajectories that avoid occlusions, reduce exposure to uncertain space, and better track moving targets.
-            Experiments on a Go2 quadruped robot across three challenging scenarios, including severe static occlusions, unknown risks, and dynamically moving targets, show that Schrödinger’s Navigator consistently outperforms strong ZSON baselines in self-localization, object localization, and overall Success Rate in occlusion-heavy environments.
-            These results demonstrate the effectiveness of trajectory-conditioned 3D imagination in enabling robust zero-shot object navigation.
+            Zero-shot object navigation asks a robot to find a target object in a previously unseen environment without scene-specific training or a pre-built map.
+            In cluttered indoor spaces, occlusions make this especially difficult: the robot can perceive the blocking structure, but it cannot directly reason about
+            hidden targets, hazards, or moving objects behind it. Schrödinger's Navigator addresses this by treating unobserved space as a small set of plausible futures.
+          </p>
+          <p>
+            Given the current RGB-D observation and robot pose, the system generates three occluder-aware candidate trajectories and uses a trajectory-conditioned 3D world
+            model to imagine future observations along each route. These imagined views update both a <strong>Global Target Value Map</strong> and a
+            <strong>Future-Aware Value Map</strong>, allowing the planner to prefer paths that are safer, less occluded, and more likely to reveal the target.
+          </p>
+          <p>
+            The paper reports consistent gains on a Unitree Go2 robot in challenging occlusion-heavy settings, including static object search and scenarios with unknown risks.
+            HM3D experiments further show that the same future-imagination strategy transfers well to simulation.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Introduction. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">The framework of our Schrödinger's Navigator</h2>
-        <div class="content has-text-justified">
-        </p>
-          <!-- 图片居中 -->
-          <div class="has-text-centered">
-            <img src="./static/images/pipeline.png" alt="Introduction Image" style="width: 100%; height: auto;">
-          </div>
-          <p>
-            Overview of our Navigator pipeline. Left: The system receives a goal instruction, RGB-D observations, and the robot pose as input. Bottom center: A trajectory sampler deterministically selects three candidate trajectories and conditions a 3D world model. The model predicts future 3DGS observations along these trajectories—left bypass, right bypass, and over-the-top—to infer occluded and unobserved regions. Top right: The predicted cues are fused with current observations to construct and update multi-sourced value maps and enable future-aware reasoning. This process produces a final affordance map used for intermediate waypoint selection. Bottom right: The execution unit follows the selected waypoint and generates control commands to navigate the robot continuously toward the goal.
-          </p>
-          <p>
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Introduction. -->
   </div>
 </section>
 
-
-<section class="section" id="results">
+<section class="section">
   <div class="container is-max-desktop">
-
-    <!-- Title + intro -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
+        <div class="section-kicker">Key Ideas</div>
+        <h2 class="title is-3">What Changes Compared With Standard ZSON</h2>
+      </div>
+    </div>
+
+    <div class="columns is-variable is-5">
+      <div class="column">
+        <div class="highlight-card content has-text-left">
+          <h3>1. Occluder-aware trajectory sampling</h3>
+          <p>
+            The planner does not rely on a single greedy path. It deterministically samples three candidate bypass strategies around the dominant occluder,
+            including left, right, and over-the-top alternatives, so the robot can explicitly compare distinct futures before moving.
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="highlight-card content has-text-left">
+          <h3>2. Trajectory-conditioned 3D imagination</h3>
+          <p>
+            For each candidate route, the world model predicts future 3D Gaussian Splatting observations conditioned on that trajectory.
+            This lets the agent anticipate post-occlusion views, hidden target cues, and risky space that is currently outside the field of view.
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="highlight-card content has-text-left">
+          <h3>3. Future-aware waypoint selection</h3>
+          <p>
+            Imagined observations are fused back into navigation maps, producing waypoint scores that jointly reflect semantics, visibility, free space,
+            and uncertainty. The resulting policy is better aligned with real-world search under clutter, motion, and partial observability.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="section-kicker">Supplementary Video</div>
+        <h2 class="title is-3">Real Robot and Simulation Rollouts</h2>
+        <div class="content has-text-justified section-copy">
+          <p>
+            The supplementary video shows representative rollouts from both real-world and simulated environments.
+            The real-robot sequences include the <strong>office</strong>, <strong>classroom</strong>, and <strong>common room</strong> scenes used in the paper,
+            as well as dynamic cases such as moving chairs and sudden occlusions entering the robot's view.
+          </p>
+        </div>
+        <div class="video-frame" style="margin-top: 1.2rem;">
+          <video id="demo-video" autoplay muted loop playsinline style="display: block; width: 100%; height: auto;">
+            <source src="./static/videos/supp.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <button id="video-audio-toggle" class="video-toggle">Unmute</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="section-kicker">Method</div>
+        <h2 class="title is-3">Framework</h2>
+        <div class="figure-frame">
+          <img src="./static/images/pipeline.png" alt="Framework pipeline" style="display: block; width: 100%; height: auto; border-radius: 12px;">
+        </div>
+        <div class="content has-text-justified section-copy" style="margin-top: 1rem;">
+          <p>
+            The full pipeline starts from a language goal, egocentric RGB-D observations, and robot pose.
+            A trajectory sampler first proposes three candidate trajectories that explicitly reason around the visible occluder.
+            Each trajectory conditions a 3D world model, which predicts future observations and feeds those predictions into the navigation stack.
+          </p>
+          <p>
+            The predicted cues update the Global Target Value Map and the Future-Aware Value Map, yielding an affordance map that ranks intermediate waypoints.
+            The execution module then follows the selected waypoint and continuously replans as new observations arrive.
+            This design keeps the system training-free at deployment time while still giving it a concrete mechanism for anticipating hidden space.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="results">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="section-kicker">Experiments</div>
         <h2 class="title is-3">Results</h2>
-        <div class="content has-text-justified is-size-6" style="max-width: 900px; margin: 0 auto;">
+        <div class="content has-text-justified section-copy">
           <p>
-            We report results in both <strong>real-world</strong> and <strong>simulation</strong> settings.
-            The real-robot experiments validate robustness under occlusions, unknown risks, and moving targets,
-            while the simulator experiments provide controlled comparisons across diverse environments.
+            The latest paper reports two experiment tracks: <strong>HM3D/Habitat simulation</strong> and <strong>real-world deployment on a Unitree Go2</strong>.
+            Below we mirror the current PDF: the real-robot benchmark covers static object search and scenarios with unknown risks across three indoor environments,
+            while the simulation benchmark reports SR, SPL, and DTG on 1,000 HM3D episodes.
           </p>
         </div>
       </div>
     </div>
 
-    <!-- ===================== -->
-    <!-- Real-world Figure (keep) -->
-    <!-- ===================== -->
-    <div style="max-width: 900px; margin: 1.25rem auto 0;">
-      <h3 class="title is-5 has-text-centered" style="margin-bottom: 0.75rem;">Real-world (Go2)</h3>
+    <div class="columns is-variable is-5" style="margin-top: 0.5rem;">
+      <div class="column">
+        <div class="metric-card">
+          <span class="metric-number">23/30</span>
+          <p><strong>Static targets</strong></p>
+          <p class="is-size-7">vs. 22/30 for InstructNav*</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="metric-card">
+          <span class="metric-number">17/30</span>
+          <p><strong>Unknown risks</strong></p>
+          <p class="is-size-7">vs. 11/30 for InstructNav*</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="metric-card">
+          <span class="metric-number">2.23</span>
+          <p><strong>HM3D DTG</strong></p>
+          <p class="is-size-7">best DTG, with second-best SR/SPL</p>
+        </div>
+      </div>
+    </div>
 
-      <figure class="image">
+    <div style="max-width: 920px; margin: 2rem auto 0;">
+      <h3 class="title is-5 has-text-centered">Real-World Benchmark (Unitree Go2)</h3>
+      <div class="figure-frame">
         <img src="./static/images/results_real.png" alt="Real-world experiment results"
-             style="border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.10);">
-      </figure>
-      <p class="has-text-centered is-size-7" style="margin-top: 0.6rem; color: #555;">
-        Performance under three indoor scenes: office, classroom, and common room.
+             style="display: block; width: 100%; height: auto; border-radius: 12px;">
+      </div>
+      <p class="has-text-centered result-note">
+        Figure 5 in the paper visualizes three real-world scenarios: Office "Chair", Classroom "Plant", and Common Room "Trash Can".
       </p>
     </div>
 
-    <!-- ===================== -->
-    <!-- Real-world Table -->
-    <!-- ===================== -->
-    <div style="max-width: 720px; margin: 1rem auto 0;">
+    <div style="max-width: 760px; margin: 1.2rem auto 0;">
+      <div class="content has-text-justified section-copy" style="margin-bottom: 0.8rem;">
+        <p>
+          The real-robot system is built on a Unitree Go2 with a RealSense D435i RGB-D camera. The benchmark spans
+          <strong>Office</strong>, <strong>Classroom</strong>, and <strong>Common Room</strong>, and evaluates two conditions:
+          standard <strong>static object search</strong> and <strong>scenarios with unknown risks</strong>, where severe static occlusions are not visible from a distance.
+        </p>
+      </div>
       <div class="table-container">
         <table class="table is-striped is-hoverable is-fullwidth">
           <caption class="has-text-centered is-size-7"
-                   style="caption-side: bottom; padding-top: 0.6rem; color: #555;">
-            <strong>Table:</strong> Comparison with baseline method in real-world environments. Results show success counts over ten trials per environment. The last column summarizes performance across all trials.
+                   style="caption-side: bottom; padding-top: 0.7rem; color: #5a6571;">
+            Real-world quantitative comparison from Table III of the latest PDF. Each entry reports success counts over ten trials per environment.
           </caption>
-
           <thead>
             <tr>
               <th>Scene</th>
@@ -322,23 +491,21 @@
               <th class="has-text-centered">All</th>
             </tr>
           </thead>
-
           <tbody>
             <tr>
-              <td colspan="5" class="has-text-centered"
-                  style="font-weight: 600; background: rgba(0,0,0,0.03);">
+              <td colspan="5" class="has-text-centered" style="font-weight: 600; background: rgba(0, 0, 0, 0.03);">
                 Search for static objects
               </td>
             </tr>
             <tr>
-              <td>InstructNav</td>
+              <td>InstructNav*</td>
               <td class="has-text-centered">7/10</td>
               <td class="has-text-centered">7/10</td>
               <td class="has-text-centered"><strong>8/10</strong></td>
               <td class="has-text-centered">22/30</td>
             </tr>
             <tr style="background: rgba(72, 199, 142, 0.08);">
-              <td>Ours</td>
+              <td><strong>Ours</strong></td>
               <td class="has-text-centered"><strong>8/10</strong></td>
               <td class="has-text-centered"><strong>8/10</strong></td>
               <td class="has-text-centered">7/10</td>
@@ -346,68 +513,40 @@
             </tr>
 
             <tr>
-              <td colspan="5" class="has-text-centered"
-                  style="font-weight: 600; background: rgba(0,0,0,0.03);">
-                Search for dynamic objects
+              <td colspan="5" class="has-text-centered" style="font-weight: 600; background: rgba(0, 0, 0, 0.03);">
+                Scenarios with unknown risks
               </td>
             </tr>
             <tr>
-              <td>InstructNav</td>
-              <td class="has-text-centered">3/10</td>
+              <td>InstructNav*</td>
               <td class="has-text-centered">4/10</td>
               <td class="has-text-centered">3/10</td>
-              <td class="has-text-centered">10/30</td>
-            </tr>
-            <tr style="background: rgba(72, 199, 142, 0.08);">
-              <td>Ours</td>
-              <td class="has-text-centered"><strong>5/10</strong></td>
-              <td class="has-text-centered"><strong>5/10</strong></td>
-              <td class="has-text-centered"><strong>6/10</strong></td>
-              <td class="has-text-centered"><strong>16/30</strong></td>
-            </tr>
-
-            <tr>
-              <td colspan="5" class="has-text-centered"
-                  style="font-weight: 600; background: rgba(0,0,0,0.03);">
-                Sudden Obstacles
-              </td>
-            </tr>
-            <tr>
-              <td>InstructNav</td>
               <td class="has-text-centered">4/10</td>
-              <td class="has-text-centered">3/10</td>
-              <td class="has-text-centered">5/10</td>
-              <td class="has-text-centered">12/30</td>
+              <td class="has-text-centered">11/30</td>
             </tr>
             <tr style="background: rgba(72, 199, 142, 0.08);">
-              <td>Ours</td>
+              <td><strong>Ours</strong></td>
+              <td class="has-text-centered"><strong>5/10</strong></td>
               <td class="has-text-centered"><strong>6/10</strong></td>
-              <td class="has-text-centered"><strong>7/10</strong></td>
               <td class="has-text-centered"><strong>6/10</strong></td>
-              <td class="has-text-centered"><strong>19/30</strong></td>
+              <td class="has-text-centered"><strong>17/30</strong></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <!-- ===================== -->
-    <!-- Simulation Table (HM3D) -->
-    <!-- ===================== -->
-    <div style="max-width: 720px; margin: 2rem auto 0;">
-      <h3 class="title is-5 has-text-centered" style="margin-bottom: 0.75rem;">Simulation (HM3D)</h3>
-
+    <div style="max-width: 760px; margin: 2.4rem auto 0;">
+      <h3 class="title is-5 has-text-centered">Simulation Benchmark (HM3D / Habitat)</h3>
+      <p class="has-text-centered result-note" style="margin-bottom: 0.8rem;">
+        The paper evaluates 1,000 episodes across six target categories on HM3D. Our method achieves the best DTG and the second-best SR and SPL in Table I.
+      </p>
       <div class="table-container">
         <table class="table is-striped is-hoverable is-fullwidth">
           <caption class="has-text-centered is-size-7"
-                   style="caption-side: bottom; padding-top: 0.6rem; color: #555;">
-            <strong>Table:</strong> <strong>Quantitative Comparison on Simulation Results.</strong>
-            Cell background colors indicate the
-            <span style="background:#fca5a5; padding:0 6px; border-radius:6px;">best</span>,
-            <span style="background:#fdba74; padding:0 6px; border-radius:6px;">second best</span>, or
-            <span style="background:#fde68a; padding:0 6px; border-radius:6px;">third best</span>.
+                   style="caption-side: bottom; padding-top: 0.7rem; color: #5a6571;">
+            Simulation quantitative comparison from Table I of the latest PDF. Background colors indicate the best, second-best, and third-best values.
           </caption>
-
           <thead>
             <tr>
               <th rowspan="2">Method</th>
@@ -420,30 +559,27 @@
               <th class="has-text-centered">DTG↓</th>
             </tr>
           </thead>
-
           <tbody>
             <tr><td>ZSON</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.255</td><td class="has-text-centered">0.126</td><td class="has-text-centered">--</td></tr>
             <tr><td>PixNav</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.379</td><td class="has-text-centered">0.205</td><td class="has-text-centered">--</td></tr>
             <tr><td>SPNet</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.312</td><td class="has-text-centered">0.101</td><td class="has-text-centered">--</td></tr>
-            <tr><td>SGM</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.602</td><td class="has-text-centered" style="background:#fdba74;"><strong>0.308</strong></td><td class="has-text-centered">--</td></tr>
-
+            <tr><td>SGM</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.602</td><td class="has-text-centered" style="background: #fde68a;"><strong>0.308</strong></td><td class="has-text-centered">--</td></tr>
             <tr><td>ESC</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.392</td><td class="has-text-centered">0.223</td><td class="has-text-centered">--</td></tr>
-            <tr><td>VLFM</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.525</td><td class="has-text-centered" style="background:#fde68a;"><strong>0.304</strong></td><td class="has-text-centered">--</td></tr>
+            <tr><td>VLFM</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.525</td><td class="has-text-centered">0.304</td><td class="has-text-centered">--</td></tr>
             <tr><td>VoroNav</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.420</td><td class="has-text-centered">0.260</td><td class="has-text-centered">--</td></tr>
             <tr><td>L3MVN</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.504</td><td class="has-text-centered">0.231</td><td class="has-text-centered">4.43</td></tr>
             <tr><td>TriHelper</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.565</td><td class="has-text-centered">0.253</td><td class="has-text-centered">3.87</td></tr>
             <tr><td>GAMap</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.531</td><td class="has-text-centered">0.260</td><td class="has-text-centered">--</td></tr>
-            <tr><td>InstructNav</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.510</td><td class="has-text-centered">0.187</td><td class="has-text-centered" style="background:#fdba74;"><strong>2.89</strong></td></tr>
-            <tr><td>InstructNav*</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.453</td><td class="has-text-centered">0.186</td><td class="has-text-centered" style="background:#fde68a;"><strong>3.38</strong></td></tr>
-            <tr><td>CogNav</td><td class="has-text-centered">✓</td><td class="has-text-centered" style="background:#fdba74;"><strong>0.725</strong></td><td class="has-text-centered">0.262</td><td class="has-text-centered">--</td></tr>
-            <tr><td>ApexNav</td><td class="has-text-centered">✓</td><td class="has-text-centered" style="background:#fca5a5;"><strong>0.762</strong></td><td class="has-text-centered" style="background:#fca5a5;"><strong>0.380</strong></td><td class="has-text-centered">--</td></tr>
-
+            <tr><td>InstructNav</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.510</td><td class="has-text-centered">0.187</td><td class="has-text-centered" style="background: #fdba74;"><strong>2.89</strong></td></tr>
+            <tr><td>InstructNav*</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.453</td><td class="has-text-centered">0.186</td><td class="has-text-centered" style="background: #fde68a;"><strong>3.38</strong></td></tr>
+            <tr><td>CogNav</td><td class="has-text-centered">✓</td><td class="has-text-centered" style="background: #fde68a;"><strong>0.725</strong></td><td class="has-text-centered">0.262</td><td class="has-text-centered">--</td></tr>
+            <tr><td>ApexNav</td><td class="has-text-centered">✓</td><td class="has-text-centered" style="background: #fca5a5;"><strong>0.762</strong></td><td class="has-text-centered" style="background: #fca5a5;"><strong>0.380</strong></td><td class="has-text-centered">--</td></tr>
             <tr style="background: rgba(72, 199, 142, 0.08);">
               <td><strong>Ours</strong></td>
               <td class="has-text-centered">✓</td>
-              <td class="has-text-centered" style="background:#fde68a;"><strong>0.609</strong></td>
-              <td class="has-text-centered">0.237</td>
-              <td class="has-text-centered" style="background:#fca5a5;"><strong>2.23</strong></td>
+              <td class="has-text-centered" style="background: #fdba74;"><strong>0.739</strong></td>
+              <td class="has-text-centered" style="background: #fdba74;"><strong>0.317</strong></td>
+              <td class="has-text-centered" style="background: #fca5a5;"><strong>2.23</strong></td>
             </tr>
           </tbody>
         </table>
@@ -452,52 +588,74 @@
   </div>
 </section>
 
-
-
-<!-- <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+<section class="section" id="bibtex">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="section-kicker has-text-centered">Citation</div>
+        <h2 class="title is-3 has-text-centered">BibTeX</h2>
+        <div class="bibtex-frame">
+          <pre><code>@misc{he2026schrodingersnavigatorimaginingensemble,
+  title        = {Schr\"odinger's Navigator: Imagining an Ensemble of Futures for Zero-Shot Object Navigation},
+  author       = {Yu He and Da Huang and Zhenyang Liu and Zixiao Gu and Qiang Sun and Guangnan Ye and Yanwei Fu and Yu-Gang Jiang},
+  year         = {2026},
+  eprint       = {2512.21201},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.RO},
+  url          = {https://arxiv.org/abs/2512.21201}
 }</code></pre>
+        </div>
+      </div>
+    </div>
   </div>
-</section> -->
-
+</section>
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+    <div class="content has-text-centered footer-links">
+      <a class="icon-link" href="https://arxiv.org/pdf/2512.21201.pdf" target="_blank" rel="noopener">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <a class="icon-link" href="https://doi.org/10.48550/arXiv.2512.21201" target="_blank" rel="noopener">
+        <i class="fas fa-link"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/HEYU322/Schrodinger-Navigator.github.io" target="_blank" rel="noopener">
         <i class="fab fa-github"></i>
       </a>
     </div>
     <div class="columns is-centered">
       <div class="column is-8">
-        <div class="content">
+        <div class="content has-text-centered">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This project page is adapted from the <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener">Nerfies website template</a>.
           </p>
           <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            Website source is hosted on <a href="https://github.com/HEYU322/Schrodinger-Navigator.github.io" target="_blank" rel="noopener">GitHub</a>.
+            The template remains available under the
+            <a rel="license noopener" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a> license.
           </p>
         </div>
       </div>
     </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('demo-video');
+    const button = document.getElementById('video-audio-toggle');
+
+    if (!video || !button) {
+      return;
+    }
+
+    button.addEventListener('click', function() {
+      video.muted = !video.muted;
+      button.textContent = video.muted ? 'Unmute' : 'Mute';
+      video.play();
+    });
+  });
+</script>
 
 </body>
 </html>
