@@ -25,19 +25,11 @@
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/logo.png">
+  <link rel="icon" href="./static/images/favicon.png">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
 
   <style>
     body {
@@ -268,7 +260,7 @@
                    target="_blank" rel="noopener"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                    <i class="ai ai-arxiv"></i>
+                    <i class="fas fa-file-alt"></i>
                   </span>
                   <span>Paper</span>
                 </a>
@@ -313,7 +305,8 @@
     <div class="hero-body">
       <div class="section-kicker has-text-centered">Teaser</div>
       <div class="teaser-frame">
-        <img src="./static/images/teaser.png" alt="Teaser image" class="teaser-image">
+        <img src="./static/images/teaser.webp" alt="Teaser image" class="teaser-image"
+             width="1828" height="609" decoding="async" fetchpriority="high">
       </div>
       <h2 class="subtitle has-text-centered" style="margin-top: 1.2rem;">
         Trajectory-conditioned 3D imagination lets the robot reason about what may exist behind an occluder before it commits to a route.
@@ -411,8 +404,10 @@
           </p>
         </div>
         <div class="video-frame" style="margin-top: 1.2rem;">
-          <video id="demo-video" autoplay muted loop playsinline style="display: block; width: 100%; height: auto;">
-            <source src="./static/videos/supp.mp4" type="video/mp4">
+          <video id="demo-video" muted loop playsinline preload="none"
+                 poster="./static/images/supp-poster.jpg"
+                 style="display: block; width: 100%; height: auto;">
+            <source data-src="./static/videos/supp-optimized.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <button id="video-audio-toggle" class="video-toggle">Unmute</button>
@@ -429,7 +424,9 @@
         <div class="section-kicker">Method</div>
         <h2 class="title is-3">Framework</h2>
         <div class="figure-frame">
-          <img src="./static/images/pipeline.png" alt="Framework pipeline" style="display: block; width: 100%; height: auto; border-radius: 12px;">
+          <img src="./static/images/pipeline.webp" alt="Framework pipeline"
+               width="2236" height="1159" loading="lazy" decoding="async"
+               style="display: block; width: 100%; height: auto; border-radius: 12px;">
         </div>
         <div class="content has-text-justified section-copy" style="margin-top: 1rem;">
           <p>
@@ -491,7 +488,8 @@
     <div style="max-width: 920px; margin: 2rem auto 0;">
       <h3 class="title is-5 has-text-centered">Real-World Benchmark (Unitree Go2)</h3>
       <div class="figure-frame">
-        <img src="./static/images/results_real.png" alt="Real-world experiment results"
+        <img src="./static/images/results_real.webp" alt="Real-world experiment results"
+             width="1989" height="773" loading="lazy" decoding="async"
              style="display: block; width: 100%; height: auto; border-radius: 12px;">
       </div>
       <p class="has-text-centered result-note">
@@ -675,15 +673,51 @@
   document.addEventListener('DOMContentLoaded', function() {
     const video = document.getElementById('demo-video');
     const button = document.getElementById('video-audio-toggle');
+    const source = video ? video.querySelector('source[data-src]') : null;
+    let videoLoaded = false;
 
     if (!video || !button) {
       return;
     }
 
+    function ensureVideoLoaded() {
+      if (videoLoaded || !source) {
+        return;
+      }
+
+      source.src = source.dataset.src;
+      video.load();
+      videoLoaded = true;
+    }
+
+    function playVideo() {
+      ensureVideoLoaded();
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(function() {});
+      }
+    }
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            playVideo();
+            observer.disconnect();
+          }
+        });
+      }, { rootMargin: '240px 0px' });
+
+      observer.observe(video);
+    } else {
+      playVideo();
+    }
+
     button.addEventListener('click', function() {
+      ensureVideoLoaded();
       video.muted = !video.muted;
       button.textContent = video.muted ? 'Unmute' : 'Mute';
-      video.play();
+      playVideo();
     });
   });
 </script>
