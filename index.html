@@ -202,6 +202,29 @@
       margin-top: 5px;
       margin-bottom: 5px;
     }
+
+    .title-line {
+      display: block;
+    }
+
+    .author-row + .author-row {
+      margin-top: 0.2rem;
+    }
+
+    .publication-authors.is-author-list {
+      font-size: 1.18rem;
+      font-weight: 600;
+      line-height: 1.6;
+      color: #1f2933;
+    }
+
+    .publication-authors.is-affiliation-list {
+      margin-top: 0.55rem;
+      font-size: 0.98rem;
+      font-weight: 500;
+      line-height: 1.6;
+      color: #6b7280;
+    }
   </style>
 </head>
 <body>
@@ -212,18 +235,26 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <div class="paper-badge">arXiv 2026 · cs.RO / cs.AI / cs.CV</div>
-          <h1 class="title is-1 publication-title">Schrödinger's Navigator: Imagining an Ensemble of Futures for Zero-Shot Object Navigation</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Yu He<sup>1,4</sup>,</span>
-            <span class="author-block">Da Huang<sup>2,4</sup>,</span>
-            <span class="author-block">Zhenyang Liu<sup>1,4</sup>,</span>
-            <span class="author-block">Zixiao Gu<sup>1</sup>,</span>
-            <span class="author-block">Qiang Sun<sup>3</sup>,</span>
-            <span class="author-block">Guangnan Ye<sup>1,4</sup>,</span>
-            <span class="author-block">Yanwei Fu<sup>1,4</sup>,</span>
-            <span class="author-block">Yu-Gang Jiang<sup>1</sup></span>
+          <h1 class="title is-1 publication-title">
+            <span class="title-line">Schrödinger's Navigator:</span>
+            <span class="title-line">Imagining an Ensemble of Futures</span>
+            <span class="title-line">for Zero-Shot Object Navigation</span>
+          </h1>
+          <div class="publication-authors is-author-list">
+            <div class="author-row">
+              <span class="author-block">Yu He<sup>1,4</sup>,</span>
+              <span class="author-block">Da Huang<sup>2,4</sup>,</span>
+              <span class="author-block">Zhenyang Liu<sup>1,4</sup>,</span>
+              <span class="author-block">Zixiao Gu<sup>1</sup>,</span>
+            </div>
+            <div class="author-row">
+              <span class="author-block">Qiang Sun<sup>3</sup>,</span>
+              <span class="author-block">Guangnan Ye<sup>1,4</sup>,</span>
+              <span class="author-block">Yanwei Fu<sup>1,4</sup>,</span>
+              <span class="author-block">Yu-Gang Jiang<sup>1</sup></span>
+            </div>
           </div>
-          <div class="is-size-5 publication-authors">
+          <div class="publication-authors is-affiliation-list">
             <span class="author-block"><sup>1</sup>Fudan University,</span>
             <span class="author-block"><sup>2</sup>Shanghai Jiao Tong University,</span>
             <span class="author-block"><sup>3</sup>Shanghai University of International Business and Economics,</span>
