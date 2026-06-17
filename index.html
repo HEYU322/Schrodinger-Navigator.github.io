@@ -275,6 +275,7 @@
                   <span>PDF</span>
                 </a>
               </span>
+              <!--
               <span class="link-block">
                 <span class="button is-normal is-rounded is-dark coming-soon-button" aria-disabled="true">
                   <span class="icon">
@@ -283,6 +284,7 @@
                   <span>Code Coming Soon</span>
                 </span>
               </span>
+              -->
             </div>
           </div>
 
@@ -453,9 +455,10 @@
         <h2 class="title is-3">Results</h2>
         <div class="content has-text-justified section-copy">
           <p>
-            The latest paper reports two experiment tracks: <strong>HM3D/Habitat simulation</strong> and <strong>real-world deployment on a Unitree Go2</strong>.
-            Below we mirror the current PDF: the real-robot benchmark covers static object search and scenarios with unknown risks across three indoor environments,
-            while the simulation benchmark reports SR, SPL, and DTG on 1,000 HM3D episodes.
+            The latest paper reports two experiment tracks: <strong>real-world deployment on a Unitree Go2</strong> and
+            <strong>HM3D/Habitat simulation</strong>. Below we mirror the v3 PDF: the real-robot benchmark covers static object search
+            and scenarios with unknown risks across three indoor environments, while the simulation benchmark reports SR, SPL, and DTG
+            on 1,000 HM3D episodes.
           </p>
         </div>
       </div>
@@ -466,21 +469,21 @@
         <div class="metric-card">
           <span class="metric-number">23/30</span>
           <p><strong>Static targets</strong></p>
-          <p class="is-size-7">vs. 22/30 for InstructNav*</p>
+          <p class="is-size-7">vs. 22/30 for InstructNav</p>
         </div>
       </div>
       <div class="column">
         <div class="metric-card">
           <span class="metric-number">17/30</span>
           <p><strong>Unknown risks</strong></p>
-          <p class="is-size-7">vs. 11/30 for InstructNav*</p>
+          <p class="is-size-7">vs. 11/30 for InstructNav</p>
         </div>
       </div>
       <div class="column">
         <div class="metric-card">
           <span class="metric-number">2.23</span>
           <p><strong>HM3D DTG</strong></p>
-          <p class="is-size-7">best DTG, with second-best SR/SPL</p>
+          <p class="is-size-7">best SR and DTG; second-best SPL</p>
         </div>
       </div>
     </div>
@@ -502,14 +505,14 @@
         <p>
           The real-robot system is built on a Unitree Go2 with a RealSense D435i RGB-D camera. The benchmark spans
           <strong>Office</strong>, <strong>Classroom</strong>, and <strong>Common Room</strong>, and evaluates two conditions:
-          standard <strong>static object search</strong> and <strong>scenarios with unknown risks</strong>, where severe static occlusions are not visible from a distance.
+          standard <strong>static object search</strong> and <strong>scenarios with unknown risks</strong>.
         </p>
       </div>
       <div class="table-container">
         <table class="table is-striped is-hoverable is-fullwidth">
           <caption class="has-text-centered is-size-7"
                    style="caption-side: bottom; padding-top: 0.7rem; color: #5a6571;">
-            Real-world quantitative comparison from Table III of the latest PDF. Each entry reports success counts over ten trials per environment.
+            Real-world quantitative comparison from Table 3 of the v3 PDF. Each entry reports success counts over ten trials per environment.
           </caption>
           <thead>
             <tr>
@@ -527,7 +530,7 @@
               </td>
             </tr>
             <tr>
-              <td>InstructNav*</td>
+              <td>InstructNav</td>
               <td class="has-text-centered">7/10</td>
               <td class="has-text-centered">7/10</td>
               <td class="has-text-centered"><strong>8/10</strong></td>
@@ -543,11 +546,11 @@
 
             <tr>
               <td colspan="5" class="has-text-centered" style="font-weight: 600; background: rgba(0, 0, 0, 0.03);">
-                Scenarios with unknown risks
+                Scenarios with Unknown Risks
               </td>
             </tr>
             <tr>
-              <td>InstructNav*</td>
+              <td>InstructNav</td>
               <td class="has-text-centered">4/10</td>
               <td class="has-text-centered">3/10</td>
               <td class="has-text-centered">4/10</td>
@@ -568,13 +571,13 @@
     <div style="max-width: 760px; margin: 2.4rem auto 0;">
       <h3 class="title is-5 has-text-centered">Simulation Benchmark (HM3D / Habitat)</h3>
       <p class="has-text-centered result-note" style="margin-bottom: 0.8rem;">
-        The paper evaluates 1,000 episodes across six target categories on HM3D. Our method achieves the best DTG and the second-best SR and SPL in Table I.
+        The paper evaluates 1,000 episodes across six target categories on HM3D. Our method achieves the best SR and DTG, and the second-best SPL in Table 1.
       </p>
       <div class="table-container">
         <table class="table is-striped is-hoverable is-fullwidth">
           <caption class="has-text-centered is-size-7"
                    style="caption-side: bottom; padding-top: 0.7rem; color: #5a6571;">
-            Simulation quantitative comparison from Table I of the latest PDF. Background colors indicate the best, second-best, and third-best values.
+            Simulation quantitative comparison from Table 1 of the v3 PDF. Background colors indicate the best, second-best, and third-best values.
           </caption>
           <thead>
             <tr>
@@ -592,28 +595,29 @@
             <tr><td>ZSON</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.255</td><td class="has-text-centered">0.126</td><td class="has-text-centered">--</td></tr>
             <tr><td>PixNav</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.379</td><td class="has-text-centered">0.205</td><td class="has-text-centered">--</td></tr>
             <tr><td>SPNet</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.312</td><td class="has-text-centered">0.101</td><td class="has-text-centered">--</td></tr>
-            <tr><td>SGM</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.602</td><td class="has-text-centered" style="background: #fde68a;"><strong>0.308</strong></td><td class="has-text-centered">--</td></tr>
+            <tr><td>SGM</td><td class="has-text-centered">✗</td><td class="has-text-centered">0.602</td><td class="has-text-centered" style="background: #fdba74;"><strong>0.308</strong></td><td class="has-text-centered">--</td></tr>
             <tr><td>ESC</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.392</td><td class="has-text-centered">0.223</td><td class="has-text-centered">--</td></tr>
             <tr><td>VLFM</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.525</td><td class="has-text-centered">0.304</td><td class="has-text-centered">--</td></tr>
             <tr><td>VoroNav</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.420</td><td class="has-text-centered">0.260</td><td class="has-text-centered">--</td></tr>
             <tr><td>L3MVN</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.504</td><td class="has-text-centered">0.231</td><td class="has-text-centered">4.43</td></tr>
-            <tr><td>TriHelper</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.565</td><td class="has-text-centered">0.253</td><td class="has-text-centered">3.87</td></tr>
+            <tr><td>TriHelper</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.565</td><td class="has-text-centered">0.253</td><td class="has-text-centered" style="background: #fde68a;"><strong>3.87</strong></td></tr>
             <tr><td>GAMap</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.531</td><td class="has-text-centered">0.260</td><td class="has-text-centered">--</td></tr>
             <tr><td>InstructNav</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.510</td><td class="has-text-centered">0.187</td><td class="has-text-centered" style="background: #fdba74;"><strong>2.89</strong></td></tr>
-            <tr><td>InstructNav*</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.453</td><td class="has-text-centered">0.186</td><td class="has-text-centered" style="background: #fde68a;"><strong>3.38</strong></td></tr>
-            <tr><td>CogNav</td><td class="has-text-centered">✓</td><td class="has-text-centered" style="background: #fde68a;"><strong>0.725</strong></td><td class="has-text-centered">0.262</td><td class="has-text-centered">--</td></tr>
-            <tr><td>ApexNav</td><td class="has-text-centered">✓</td><td class="has-text-centered" style="background: #fca5a5;"><strong>0.762</strong></td><td class="has-text-centered" style="background: #fca5a5;"><strong>0.380</strong></td><td class="has-text-centered">--</td></tr>
+            <tr><td>ImagineNav</td><td class="has-text-centered">✓</td><td class="has-text-centered">0.530</td><td class="has-text-centered">0.238</td><td class="has-text-centered">--</td></tr>
+            <tr><td>ImagineNav++</td><td class="has-text-centered">✓</td><td class="has-text-centered" style="background: #fdba74;"><strong>0.625</strong></td><td class="has-text-centered" style="background: #fca5a5;"><strong>0.328</strong></td><td class="has-text-centered">--</td></tr>
+            <tr><td>BeliefMapNav</td><td class="has-text-centered">✓</td><td class="has-text-centered" style="background: #fde68a;"><strong>0.614</strong></td><td class="has-text-centered">0.306</td><td class="has-text-centered">--</td></tr>
             <tr style="background: rgba(72, 199, 142, 0.08);">
               <td><strong>Ours</strong></td>
               <td class="has-text-centered">✓</td>
-              <td class="has-text-centered" style="background: #fdba74;"><strong>0.739</strong></td>
-              <td class="has-text-centered" style="background: #fdba74;"><strong>0.317</strong></td>
+              <td class="has-text-centered" style="background: #fca5a5;"><strong>0.652</strong></td>
+              <td class="has-text-centered" style="background: #fdba74;"><strong>0.311</strong></td>
               <td class="has-text-centered" style="background: #fca5a5;"><strong>2.23</strong></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+
   </div>
 </section>
 
