@@ -41,36 +41,37 @@
       background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
     }
 
+    /* Compact conference identity, below the paper title. */
     .conference-brand {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 0.9rem;
-      margin-bottom: 1.2rem;
+      gap: 0.8rem;
+      margin: 0.65rem auto 1.45rem;
     }
 
     .conference-logo {
       display: block;
-      width: min(240px, 58vw);
+      width: 112px;
+      max-width: 32vw;
       height: auto;
-      max-height: 120px;
       object-fit: contain;
       flex-shrink: 0;
     }
 
-    .paper-badge {
-      display: inline-block;
-      margin: 0;
-      padding: 0.48rem 1.25rem;
-      border-radius: 999px;
-      border: 1px solid #263e58;
-      background: #263e58;
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(38, 62, 88, 0.16);
+    .conference-divider {
+      width: 1px;
+      height: 30px;
+      background: #cbd5df;
+      flex-shrink: 0;
+    }
+
+    .conference-year {
+      font-family: 'Google Sans', sans-serif;
       font-size: 1.05rem;
       font-weight: 700;
       letter-spacing: 0.035em;
+      color: #34495e;
     }
 
     .hero-summary {
@@ -274,19 +275,20 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <div class="conference-brand" aria-label="CoRL 2026 conference mark">
-            <img class="conference-logo"
-                 src="./static/images/corl-2026-logo.png"
-                 alt="CoRL 2026 conference logo"
-                 width="240" height="120"
-                 loading="eager" decoding="async">
-            <div class="paper-badge">CoRL 2026</div>
-          </div>
           <h1 class="title is-1 publication-title">
             <span class="title-line">Schrödinger's Navigator:</span>
             <span class="title-line">Imagining an Ensemble of Futures</span>
             <span class="title-line">for Zero-Shot Object Navigation</span>
           </h1>
+          <div class="conference-brand" aria-label="CoRL 2026">
+            <img class="conference-logo"
+                 src="./static/images/corl-2026-logo.png"
+                 alt="CoRL conference logo"
+                 width="112" height="56"
+                 loading="eager" decoding="async">
+            <span class="conference-divider" aria-hidden="true"></span>
+            <span class="conference-year">2026</span>
+          </div>
           <div class="publication-authors is-author-list">
             <div class="author-row">
               <span class="author-block">Yu He<sup>1,4,6</sup>,</span>
