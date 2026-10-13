@@ -226,7 +226,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <div class="paper-badge">arXiv 2026 · cs.RO / cs.AI / cs.CV</div>
+          <div class="paper-badge">CoRL 2026 · Camera-Ready</div>
           <h1 class="title is-1 publication-title">
             <span class="title-line">Schrödinger's Navigator:</span>
             <span class="title-line">Imagining an Ensemble of Futures</span>
@@ -234,15 +234,15 @@
           </h1>
           <div class="publication-authors is-author-list">
             <div class="author-row">
-              <span class="author-block">Yu He<sup>1,4</sup>,</span>
+              <span class="author-block">Yu He<sup>1,4,6</sup>,</span>
               <span class="author-block">Da Huang<sup>2,4</sup>,</span>
-              <span class="author-block">Zhenyang Liu<sup>1,4</sup>,</span>
-              <span class="author-block">Zixiao Gu<sup>1</sup>,</span>
+              <span class="author-block">Zhenyang Liu<sup>1,4,6</sup>,</span>
+              <span class="author-block">Zixiao Gu<sup>2,4,6</sup>,</span>
             </div>
             <div class="author-row">
               <span class="author-block">Qiang Sun<sup>3</sup>,</span>
-              <span class="author-block">Guangnan Ye<sup>1,4</sup>,</span>
-              <span class="author-block">Yanwei Fu<sup>1,4</sup>,</span>
+              <span class="author-block">Guangnan Ye<sup>1,4,&dagger;</sup>,</span>
+              <span class="author-block">Yanwei Fu<sup>1,4,7,&dagger;,&Dagger;</sup>,</span>
               <span class="author-block">Yu-Gang Jiang<sup>1</sup></span>
             </div>
           </div>
@@ -250,7 +250,10 @@
             <span class="author-block"><sup>1</sup>Fudan University,</span>
             <span class="author-block"><sup>2</sup>Shanghai Jiao Tong University,</span>
             <span class="author-block"><sup>3</sup>Shanghai University of International Business and Economics,</span>
-            <span class="author-block"><sup>4</sup>Shanghai Innovation Institute</span>
+            <span class="author-block"><sup>4</sup>Shanghai Innovation Institute,</span>
+            <span class="author-block"><sup>6</sup>ActiMind,</span>
+            <span class="author-block"><sup>7</sup>Shanghai Key Laboratory of Multimodal Embodied AI</span>
+            <div class="is-size-7" style="margin-top: 0.45rem;">&dagger; Corresponding authors &nbsp;&middot;&nbsp; &Dagger; Project leader</div>
           </div>
 
           <div class="column has-text-centered">
@@ -262,7 +265,7 @@
                   <span class="icon">
                     <i class="fas fa-file-alt"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>arXiv</span>
                 </a>
               </span>
               <span class="link-block">
@@ -272,7 +275,7 @@
                   <span class="icon">
                     <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>PDF</span>
+                  <span>arXiv PDF</span>
                 </a>
               </span>
               <!--
@@ -290,10 +293,12 @@
 
           <div class="hero-summary content is-size-5">
             <p>
-              Schrödinger's Navigator equips a zero-shot object navigation agent with an <strong>ensemble of imagined futures</strong>.
-              Instead of reacting only to the visible occluder, the robot samples several bypass trajectories, predicts what it
-              is likely to observe along each route, and then selects waypoints using future-aware value maps that balance
-              target likelihood, traversability, and uncertainty in hidden space.
+              Schrödinger's Navigator performs zero-shot object navigation by generating
+              <strong>three complementary, trajectory-conditioned 3D futures</strong> from left, right, and overhead
+              virtual camera viewpoints. Their imagined cues are depth-aligned and combined in a
+              <strong>Future-Aware Value Map (FAVM)</strong>, complementing observed guidance with semantic target
+              relevance, new free-space coverage, and geometric risk. The selected navigation target is executed by a
+              local planner rather than by following imagined camera paths.
             </p>
           </div>
         </div>
@@ -332,18 +337,13 @@
         <h2 class="title is-3">Paper Overview</h2>
         <div class="content has-text-justified section-copy">
           <p>
-            Zero-shot object navigation asks a robot to find a target object in a previously unseen environment without scene-specific training or a pre-built map.
-            In cluttered indoor spaces, occlusions make this especially difficult: the robot can perceive the blocking structure, but it cannot directly reason about
-            hidden targets, hazards, or moving objects behind it. Schrödinger's Navigator addresses this by treating unobserved space as a small set of plausible futures.
+            Zero-shot object navigation (ZSON) requires robots to locate target objects in unseen environments without task-specific fine-tuning or pre-built maps. Severe occlusion and hidden risks can make single-scene reasoning brittle.
           </p>
           <p>
-            Given the current RGB-D observation and robot pose, the system generates three occluder-aware candidate trajectories and uses a trajectory-conditioned 3D world
-            model to imagine future observations along each route. These imagined views update both a <strong>Global Target Value Map</strong> and a
-            <strong>Future-Aware Value Map</strong>, allowing the planner to prefer paths that are safer, less occluded, and more likely to reveal the target.
+            Our method samples left-bypass, right-bypass, and over-the-top <strong>virtual camera trajectories</strong> around a dominant occluder. FlashWorld generates hypothetical 3D Gaussian Splatting scenes conditioned on these trajectories; depth alignment and semantic transfer enable their evidence to be fused into a <strong>Future-Aware Value Map (FAVM)</strong>.
           </p>
           <p>
-            The paper reports consistent gains on a Unitree Go2 robot in challenging occlusion-heavy settings, including static object search and scenarios with unknown risks.
-            HM3D experiments further show that the same future-imagination strategy transfers well to simulation.
+            The FAVM scores semantic target relevance, newly imagined free-space coverage, and geometric risk, then combines future guidance with observation-based navigation cues. The paper evaluates HM3D ObjectNav and controlled Unitree Go2 trials, showing comparable static-search performance and a clearer advantage under severe occlusion.
           </p>
         </div>
       </div>
@@ -365,8 +365,7 @@
         <div class="highlight-card content has-text-left">
           <h3>1. Occluder-aware trajectory sampling</h3>
           <p>
-            The planner does not rely on a single greedy path. It deterministically samples three candidate bypass strategies around the dominant occluder,
-            including left, right, and over-the-top alternatives, so the robot can explicitly compare distinct futures before moving.
+            Using observed RGB-D geometry, the sampler constructs three complementary <strong>virtual camera</strong> paths around the dominant forward occluder: left, right, and overhead. These are used for imagination, not robot-executed motion.
           </p>
         </div>
       </div>
@@ -374,8 +373,7 @@
         <div class="highlight-card content has-text-left">
           <h3>2. Trajectory-conditioned 3D imagination</h3>
           <p>
-            For each candidate route, the world model predicts future 3D Gaussian Splatting observations conditioned on that trajectory.
-            This lets the agent anticipate post-occlusion views, hidden target cues, and risky space that is currently outside the field of view.
+            FlashWorld generates trajectory-conditioned 3D Gaussian Splatting scenes from the current observation. The predictions are scale-aligned using observed depth and fused as hypotheses of currently unseen space.
           </p>
         </div>
       </div>
@@ -383,8 +381,7 @@
         <div class="highlight-card content has-text-left">
           <h3>3. Future-aware waypoint selection</h3>
           <p>
-            Imagined observations are fused back into navigation maps, producing waypoint scores that jointly reflect semantics, visibility, free space,
-            and uncertainty. The resulting policy is better aligned with real-world search under clutter, motion, and partial observability.
+            The FAVM combines target semantics, newly imagined free space, and geometric path-risk penalties, and is fused with observation-based guidance. A local planner converts the selected navigation target into executable waypoints; risk-aware ranking does not provide a formal safety guarantee.
           </p>
         </div>
       </div>
@@ -400,9 +397,7 @@
         <h2 class="title is-3">Real Robot and Simulation Rollouts</h2>
         <div class="content has-text-justified section-copy">
           <p>
-            The supplementary video shows representative rollouts from both real-world and simulated environments.
-            The real-robot sequences include the <strong>office</strong>, <strong>classroom</strong>, and <strong>common room</strong> scenes used in the paper,
-            as well as dynamic cases such as moving chairs and sudden occlusions entering the robot's view.
+            The supplementary video presents occlusion-heavy HM3D rollouts and real-world Unitree Go2 demonstrations in the <strong>Office</strong>, <strong>Classroom</strong>, and <strong>Common Room</strong>. The reported real-world benchmark focuses on static object search and severe static occlusion, rather than a dynamic-obstacle benchmark.
           </p>
         </div>
         <div class="video-frame" style="margin-top: 1.2rem;">
@@ -432,14 +427,10 @@
         </div>
         <div class="content has-text-justified section-copy" style="margin-top: 1rem;">
           <p>
-            The full pipeline starts from a language goal, egocentric RGB-D observations, and robot pose.
-            A trajectory sampler first proposes three candidate trajectories that explicitly reason around the visible occluder.
-            Each trajectory conditions a 3D world model, which predicts future observations and feeds those predictions into the navigation stack.
+            The pipeline receives a goal instruction, RGB-D observation, robot pose, and an accumulated map. An occluder-aware sampler generates three virtual camera trajectories (L/R/U), and a trajectory-conditioned 3D world model produces hypothetical 3D scenes, which are spatially aligned and semantically labeled before map fusion.
           </p>
           <p>
-            The predicted cues update the Global Target Value Map and the Future-Aware Value Map, yielding an affordance map that ranks intermediate waypoints.
-            The execution module then follows the selected waypoint and continuously replans as new observations arrive.
-            This design keeps the system training-free at deployment time while still giving it a concrete mechanism for anticipating hidden space.
+            The <strong>FAVM</strong> combines semantic relevance, exploration, and geometric risk, and is fused with a normalized <strong>observation-based value map</strong> for target selection. The local planner computes executable waypoints from that navigation target. In HM3D, future imagination is refreshed every 50 observation updates; on the real robot, world-model inference is asynchronous.
           </p>
         </div>
       </div>
@@ -455,37 +446,33 @@
         <h2 class="title is-3">Results</h2>
         <div class="content has-text-justified section-copy">
           <p>
-            The latest paper reports two experiment tracks: <strong>real-world deployment on a Unitree Go2</strong> and
-            <strong>HM3D/Habitat simulation</strong>. Below we mirror the v3 PDF: the real-robot benchmark covers static object search
-            and scenarios with unknown risks across three indoor environments, while the simulation benchmark reports SR, SPL, and DTG
-            on 1,000 HM3D episodes.
+            The results below match the <strong>CoRL 2026 camera-ready manuscript</strong>, rather than the older arXiv PDF. HM3D simulation compares against task-trained, zero-shot, and imagination-based navigation baselines. The Unitree Go2 study is a <strong>controlled comparison with an InstructNav-style baseline</strong> across three indoor scenes, with 30 trials per setting.
           </p>
         </div>
       </div>
     </div>
 
     <div class="columns is-variable is-5" style="margin-top: 0.5rem;">
-      <div class="column">
-        <div class="metric-card">
-          <span class="metric-number">23/30</span>
-          <p><strong>Static targets</strong></p>
-          <p class="is-size-7">vs. 22/30 for InstructNav</p>
-        </div>
-      </div>
-      <div class="column">
-        <div class="metric-card">
-          <span class="metric-number">17/30</span>
-          <p><strong>Unknown risks</strong></p>
-          <p class="is-size-7">vs. 11/30 for InstructNav</p>
-        </div>
-      </div>
-      <div class="column">
-        <div class="metric-card">
-          <span class="metric-number">2.23</span>
-          <p><strong>HM3D DTG</strong></p>
-          <p class="is-size-7">best SR and DTG; second-best SPL</p>
-        </div>
-      </div>
+      <div class="column"><div class="metric-card">
+        <span class="metric-number">23/30</span>
+        <p><strong>Static object search</strong></p>
+        <p class="is-size-7">vs. 22/30 InstructNav-style baseline</p>
+      </div></div>
+      <div class="column"><div class="metric-card">
+        <span class="metric-number">17/30</span>
+        <p><strong>Occlusion-heavy trials</strong></p>
+        <p class="is-size-7">vs. 11/30 InstructNav-style baseline</p>
+      </div></div>
+      <div class="column"><div class="metric-card">
+        <span class="metric-number">0.682</span>
+        <p><strong>HM3D success rate</strong></p>
+        <p class="is-size-7">vs. 0.625 ImagineNav++</p>
+      </div></div>
+      <div class="column"><div class="metric-card">
+        <span class="metric-number">1.84 m</span>
+        <p><strong>HM3D distance to goal</strong></p>
+        <p class="is-size-7">SPL 0.311 (second-highest)</p>
+      </div></div>
     </div>
 
     <div style="max-width: 920px; margin: 2rem auto 0;">
@@ -496,7 +483,7 @@
              style="display: block; width: 100%; height: auto; border-radius: 12px;">
       </div>
       <p class="has-text-centered result-note">
-        Figure 5 in the paper visualizes three real-world scenarios: Office "Chair", Classroom "Plant", and Common Room "Trash Can".
+        The manuscript illustrates three real-world scenarios: Office (Chair), Classroom (Plant), and Common Room (Trash Can).
       </p>
     </div>
 
@@ -512,7 +499,7 @@
         <table class="table is-striped is-hoverable is-fullwidth">
           <caption class="has-text-centered is-size-7"
                    style="caption-side: bottom; padding-top: 0.7rem; color: #5a6571;">
-            Real-world quantitative comparison from Table 3 of the v3 PDF. Each entry reports success counts over ten trials per environment.
+            Real-world success counts from the camera-ready manuscript: ten trials per environment and setting.
           </caption>
           <thead>
             <tr>
@@ -571,13 +558,13 @@
     <div style="max-width: 760px; margin: 2.4rem auto 0;">
       <h3 class="title is-5 has-text-centered">Simulation Benchmark (HM3D / Habitat)</h3>
       <p class="has-text-centered result-note" style="margin-bottom: 0.8rem;">
-        The paper evaluates 1,000 episodes across six target categories on HM3D. Our method achieves the best SR and DTG, and the second-best SPL in Table 1.
+        On HM3D ObjectNav, our method obtains SR 0.682, SPL 0.311, and DTG 1.84 m: the highest reported SR, lowest reported DTG, and second-highest SPL among the compared methods.
       </p>
       <div class="table-container">
         <table class="table is-striped is-hoverable is-fullwidth">
           <caption class="has-text-centered is-size-7"
                    style="caption-side: bottom; padding-top: 0.7rem; color: #5a6571;">
-            Simulation quantitative comparison from Table 1 of the v3 PDF. Background colors indicate the best, second-best, and third-best values.
+            HM3D comparison from Table 1 of the camera-ready manuscript. Colors indicate best, second-best, and third-best reported values.
           </caption>
           <thead>
             <tr>
@@ -609,13 +596,57 @@
             <tr style="background: rgba(72, 199, 142, 0.08);">
               <td><strong>Ours</strong></td>
               <td class="has-text-centered">✓</td>
-              <td class="has-text-centered" style="background: #fca5a5;"><strong>0.652</strong></td>
+              <td class="has-text-centered" style="background: #fca5a5;"><strong>0.682</strong></td>
               <td class="has-text-centered" style="background: #fdba74;"><strong>0.311</strong></td>
-              <td class="has-text-centered" style="background: #fca5a5;"><strong>2.23</strong></td>
+              <td class="has-text-centered" style="background: #fca5a5;"><strong>1.84</strong></td>
             </tr>
           </tbody>
         </table>
       </div>
+    </div>
+
+    <div style="max-width: 760px; margin: 2.2rem auto 0;">
+      <h3 class="title is-5 has-text-centered">Occlusion Severity (HM3D)</h3>
+      <p class="has-text-centered result-note" style="margin-bottom: 0.8rem;">
+        Breakdown from Appendix E of the camera-ready manuscript. ΔSR is Ours minus ImagineNav++.
+      </p>
+      <div class="table-container">
+        <table class="table is-striped is-hoverable is-fullwidth">
+          <thead><tr><th>Occlusion</th><th class="has-text-centered">ImagineNav++ SR</th><th class="has-text-centered">Ours SR</th><th class="has-text-centered">ΔSR</th></tr></thead>
+          <tbody>
+            <tr><td>Low</td><td class="has-text-centered">0.682</td><td class="has-text-centered">0.720</td><td class="has-text-centered">+0.038</td></tr>
+            <tr><td>Medium</td><td class="has-text-centered">0.629</td><td class="has-text-centered">0.674</td><td class="has-text-centered">+0.045</td></tr>
+            <tr><td>High</td><td class="has-text-centered">0.564</td><td class="has-text-centered">0.652</td><td class="has-text-centered">+0.088</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="result-note">The advantage over ImagineNav++ grows from 3.8 to 8.8 percentage points as occlusion severity increases.</p>
+    </div>
+
+    <div style="max-width: 920px; margin: 2.4rem auto 0;">
+      <h3 class="title is-5 has-text-centered">Ablation and Runtime (HM3D)</h3>
+      <p class="has-text-centered result-note" style="margin-bottom: 0.8rem;">
+        Camera-ready manuscript ablations. The full model uses three imagined trajectories and observation/future fusion β = 0.4.
+      </p>
+      <div class="table-container">
+        <table class="table is-striped is-hoverable is-fullwidth">
+          <thead><tr>
+            <th>Variant</th><th class="has-text-centered">SR ↑</th><th class="has-text-centered">Triggers / Ep.</th><th class="has-text-centered">Latency / Trigger (s)</th><th class="has-text-centered">Wait Ratio (%)</th><th class="has-text-centered">Waypoint Change (%)</th>
+          </tr></thead>
+          <tbody>
+            <tr><td>No imagination</td><td class="has-text-centered">0.553</td><td class="has-text-centered">0.00</td><td class="has-text-centered">—</td><td class="has-text-centered">0.0</td><td class="has-text-centered">—</td></tr>
+            <tr><td>Single trajectory (N=1)</td><td class="has-text-centered">0.594</td><td class="has-text-centered">4.31</td><td class="has-text-centered">3.0</td><td class="has-text-centered">7.2</td><td class="has-text-centered">28.4</td></tr>
+            <tr><td>Dense sampling (N=5)</td><td class="has-text-centered">0.622</td><td class="has-text-centered">4.18</td><td class="has-text-centered">15.0</td><td class="has-text-centered">30.8</td><td class="has-text-centered">51.6</td></tr>
+            <tr><td>Imagination-heavy (β=0.2)</td><td class="has-text-centered">0.497</td><td class="has-text-centered">4.36</td><td class="has-text-centered">9.0</td><td class="has-text-centered">22.9</td><td class="has-text-centered">67.2</td></tr>
+            <tr><td>Observation-heavy (β=0.6)</td><td class="has-text-centered">0.595</td><td class="has-text-centered">4.28</td><td class="has-text-centered">9.0</td><td class="has-text-centered">19.9</td><td class="has-text-centered">35.3</td></tr>
+            <tr><td>FAVM without exploration E(p)</td><td class="has-text-centered">0.629</td><td class="has-text-centered">4.20</td><td class="has-text-centered">9.0</td><td class="has-text-centered">19.8</td><td class="has-text-centered">40.8</td></tr>
+            <tr><td>FAVM without semantic S(p)</td><td class="has-text-centered">0.605</td><td class="has-text-centered">4.27</td><td class="has-text-centered">9.0</td><td class="has-text-centered">20.5</td><td class="has-text-centered">38.4</td></tr>
+            <tr><td>FAVM without risk R(p)</td><td class="has-text-centered">0.634</td><td class="has-text-centered">4.19</td><td class="has-text-centered">9.0</td><td class="has-text-centered">19.3</td><td class="has-text-centered">42.1</td></tr>
+            <tr style="background: rgba(72, 199, 142, 0.08);"><td><strong>Ours (N=3, β=0.4)</strong></td><td class="has-text-centered"><strong>0.682</strong></td><td class="has-text-centered">4.24</td><td class="has-text-centered">9.0</td><td class="has-text-centered">20.1</td><td class="has-text-centered">46.8</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="result-note">Waypoint Change is the fraction of navigation decisions selecting a different waypoint than the observation-only map. These results characterize trade-offs, not formal safety guarantees.</p>
     </div>
 
   </div>
